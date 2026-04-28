@@ -1,0 +1,4 @@
+# Handle locale routing
+/en /en/index.html 200
+/zh-TW /zh-TW/index.html 200
+/ja /ja/index.html 200

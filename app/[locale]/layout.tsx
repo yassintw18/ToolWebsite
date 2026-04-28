@@ -6,7 +6,7 @@ import { getMessages, getTranslations } from 'next-intl/server'
 import { ThemeProvider } from '@/components/theme-provider'
 import { notFound } from 'next/navigation'
 import { locales } from '@/i18n'
-import '../globals.css'
+import './globals.css'
 
 const geist = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
