@@ -1,3 +1,6 @@
-// This file is required for next-intl to work properly
-// The actual page is in app/[locale]/page.tsx
-export { default } from './[locale]/page'
+import { redirect } from 'next/navigation'
+
+export default function RootPage() {
+  // Redirect to English version by default
+  redirect('/en')
+}
