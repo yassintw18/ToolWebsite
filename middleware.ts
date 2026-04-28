@@ -1,3 +1,4 @@
+// Temporarily disable middleware for debugging
 import createMiddleware from 'next-intl/middleware';
 import { locales, defaultLocale } from './i18n';
 
@@ -8,5 +9,5 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|test|.*\\..*).*)']
+  matcher: ['/((?!api|_next|_vercel|hello|simple|test|.*\\..*).*)']
 };
