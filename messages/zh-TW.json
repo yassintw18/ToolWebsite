@@ -1,0 +1,267 @@
+{
+  "common": {
+    "appName": "GlobalUtils",
+    "tagline": "隱私優先的多語言工具箱",
+    "search": "搜尋工具...",
+    "darkMode": "深色模式",
+    "lightMode": "淺色模式",
+    "language": "語言"
+  },
+  "legal": {
+    "disclaimer": {
+      "title": "免責聲明",
+      "lastUpdated": "最後更新",
+      "generalDisclaimer": "一般免責聲明",
+      "generalDisclaimerText": "GlobalUtils 提供的資訊、工具和服務僅供一般資訊和教育目的。雖然我們努力提供準確有用的工具，但對於網站的完整性、準確性、可靠性、適用性或可用性，我們不作任何明示或暗示的聲明或保證。",
+      "accuracyWarranty": "資訊與工具準確性",
+      "accuracyWarrantyText": "我們努力保持工具和資訊的更新和正確性，但對工具及其計算的完整性、準確性、可靠性、適用性或可用性不作任何明示或暗示的聲明或保證。您對此類資訊的任何依賴均由您自行承擔風險。",
+      "dataPrivacy": "資料隱私與安全",
+      "dataPrivacyText": "我們致力於保護您的隱私。所有計算和資料處理均在您的瀏覽器中本地執行。我們不會收集、儲存或傳輸您輸入到工具中的任何個人資料或資訊。但是，我們無法保證您裝置或網路連接的安全性。",
+      "liabilityLimitation": "責任限制",
+      "liabilityLimitationText": "在任何情況下，GlobalUtils 或其擁有者、開發者或關聯公司均不對任何間接、偶然、特殊、後果性或懲罰性損害負責，包括但不限於利潤、資料、使用、商譽或其他無形損失的損失。",
+      "professionalAdvice": "專業建議免責聲明",
+      "professionalAdviceText": "本網站提供的工具和服務不構成專業建議，無論是法律、財務、醫療或其他方面。我們工具生成的結果不應作為專業諮詢的替代品。對於具體問題，應始終尋求合格專業人士的建議。",
+      "thirdPartyLinks": "第三方連結和資源",
+      "thirdPartyLinksText": "我們的網站可能包含第三方網站或資源的連結。我們無法控制這些網站的內容和性質，也不對其內容、隱私政策或做法負責。包含任何連結並不一定表示推薦或認同其中表達的觀點。",
+      "intellectualProperty": "智慧財產權",
+      "intellectualPropertyText": "本網站的所有內容、功能和特色，包括但不限於文字、圖形、商標和軟體，均為 GlobalUtils 的專有財產，受國際版權、商標和其他智慧財產權法保護。未經授權的使用是嚴格禁止的。",
+      "changesToTerms": "免責聲明變更",
+      "changesToTermsText": "我們保留隨時修改此免責聲明的權利。變更將在發布到網站後立即生效。您在網站上發布變更後繼續使用網站，即表示您接受此類變更。",
+      "contactInfo": "聯絡資訊",
+      "contactInfoText": "如果您對此免責聲明有任何疑問，請透過以下方式與我們聯繫："
+    }
+  },
+  "faq": {
+    "title": "常見問題解答",
+    "subtitle": "尋找關於 GlobalUtils 的常見問題答案",
+    "q1": {
+      "question": "什麼是 GlobalUtils？",
+      "answer": "GlobalUtils 是一個隱私優先的多語言工具箱，為開發者和日常用戶提供免費的線上工具。所有工具都直接在您的瀏覽器中運行，不會將數據發送到外部服務器。"
+    },
+    "q2": {
+      "question": "這些工具真的免費使用嗎？",
+      "answer": "是的！我們的所有工具都完全免費使用，沒有任何限制。我們相信為每個人提供免費的實用工具。"
+    },
+    "q3": {
+      "question": "我需要建立帳號嗎？",
+      "answer": "不需要帳號！您可以匿名使用所有工具，無需註冊。我們不收集個人數據或要求登入。"
+    },
+    "q4": {
+      "question": "我的數據安全且私密嗎？",
+      "answer": "絕對安全！所有處理都在您的瀏覽器中本地完成。我們從不存儲、傳輸或訪問您的數據。這確保了完全的隱私和安全。"
+    },
+    "q5": {
+      "question": "我可以在離線狀態下使用這些工具嗎？",
+      "answer": "可以！頁面加載後，大多數工具都可以離線工作，因為它們完全在您的瀏覽器中運行。只有初始頁面加載需要網路連接。"
+    },
+    "q6": {
+      "question": "你們支援行動裝置嗎？",
+      "answer": "是的！我們的網站完全響應式，並為行動裝置、平板電腦和桌面電腦進行了優化。所有工具在所有平台上都能無縫運作。"
+    },
+    "q7": {
+      "question": "智慧工具如何運作？",
+      "answer": "我們的智慧工具使用先進的算法和統計方法來處理文本和圖像。它們在您的瀏覽器中本地工作，無需外部 API。如需更強大的 AI 功能，建議使用 ChatGPT 等專用 AI 服務。"
+    },
+    "q8": {
+      "question": "你們為什麼不使用真正的 AI API？",
+      "answer": "我們優先考慮用戶隱私和零成本。真正的 AI API 需要將您的數據發送到外部服務器並產生大量成本。我們目前的方法在保持完全隱私的同時提供有用的功能。"
+    },
+    "q9": {
+      "question": "智慧工具有什麼限制嗎？",
+      "answer": "是的，與完整的 AI 系統相比，我們基於算法的工具有一些限制。它們在基本任務上表現良好，但可能無法處理複雜的語義理解。我們對這些限制保持透明，並持續改進我們的算法。"
+    },
+    "q10": {
+      "question": "你們多久添加新工具？",
+      "answer": "我們根據用戶反饋和需求定期添加新工具。通常，我們每個月發布 2-4 個新工具。關注我們的更新或加入我們的社群以獲取最新資訊！"
+    },
+    "q11": {
+      "question": "我可以要求新工具或功能嗎？",
+      "answer": "當然可以！我們歡迎用戶建議。請透過我們的支援電子郵件、GitHub 問題或 Discord 社群與我們聯繫。我們根據用戶需求和技术可行性來確定優先級。"
+    },
+    "q12": {
+      "question": "你們如何支援這個免費服務？",
+      "answer": "我們透過非侵入式廣告（Google AdSense）和可選的高級功能獲得支援。使用我們的工具和分享我們的網站幫助我們繼續為每個人提供免費服務。"
+    },
+    "contact": {
+      "title": "還有疑問嗎？",
+      "description": "找不到您要的答案嗎？請聯繫我們友善的團隊。",
+      "button": "聯繫支援"
+    }
+  },
+  "tools": {
+    "jsonFormatter": {
+      "title": "JSON 格式化工具",
+      "description": "格式化、驗證和美化您的 JSON 資料",
+      "input": "輸入 JSON",
+      "output": "格式化 JSON",
+      "format": "格式化",
+      "minify": "壓縮",
+      "copy": "複製到剪貼簿",
+      "clear": "清除",
+      "invalid": "無效的 JSON",
+      "success": "JSON 已複製到剪貼簿！"
+    },
+    "unitConverter": {
+      "title": "單位轉換器",
+      "description": "在不同度量衡單位之間進行轉換",
+      "length": "長度",
+      "weight": "重量",
+      "temperature": "溫度",
+      "area": "面積",
+      "volume": "體積",
+      "from": "從",
+      "to": "到",
+      "result": "結果"
+    },
+    "randomNumber": {
+      "title": "隨機數生成器",
+      "description": "為各種用途生成隨機數字",
+      "min": "最小值",
+      "max": "最大值",
+      "count": "數量",
+      "generate": "生成",
+      "result": "生成的數字",
+      "copy": "複製全部"
+    },
+    "uuidGenerator": {
+      "title": "UUID 生成器",
+      "description": "使用安全加密算法生成隨機 UUID/GUID",
+      "settings": "設定",
+      "version": "UUID 版本",
+      "count": "數量",
+      "format": "格式",
+      "hyphens": "包含連字符",
+      "generate": "生成",
+      "copyAll": "複製全部",
+      "copied": "已複製！",
+      "clear": "清除",
+      "placeholder": "點擊生成來建立隨機 UUID",
+      "privacyNote": "隱私注意事項",
+      "privacyNoteText": "使用 Web Crypto API 在本地生成。不會將數據發送到伺服器。",
+      "statistics": "統計資訊",
+      "totalGenerated": "總生成數",
+      "length": "長度"
+    },
+    "timestampConverter": {
+      "title": "時間戳轉換器",
+      "description": "在 Unix 時間戳和可讀日期之間進行轉換",
+      "currentTime": "當前時間",
+      "unixTimestamp": "Unix 時間戳",
+      "dateTime": "日期時間",
+      "enterTimestamp": "輸入 Unix 時間戳...",
+      "now": "現在",
+      "presets": "快速預設",
+      "timezone": "時區",
+      "result": "轉換結果",
+      "quickReference": "快速參考",
+      "privacyNote": "隱私注意事項",
+      "privacyNoteText": "所有轉換都在您的瀏覽器中本地完成。不會將數據發送到伺服器。"
+    },
+    "colorConverter": {
+      "title": "顏色轉換器",
+      "description": "在 HEX、RGB、HSL 和 CMYK 顏色格式之間進行轉換",
+      "currentColor": "當前顏色",
+      "random": "隨機",
+      "privacyNote": "隱私注意事項",
+      "privacyNoteText": "所有轉換都在您的瀏覽器中本地完成。不會將數據發送到伺服器。"
+    },
+    "decisionWheel": {
+      "title": "決策輪盤",
+      "description": "用旋轉輪盤讓決策變得有趣又簡單",
+      "spin": "旋轉輪盤！",
+      "spinning": "旋轉中...",
+      "result": "輪盤選中了：",
+      "noOptions": "添加選項以開始旋轉！",
+      "optionsTitle": "選項",
+      "optionsCount": "{{count}} 個選項",
+      "addOptions": "添加選項",
+      "inputPlaceholder": "輸入選項（每行一個）",
+      "add": "添加選項",
+      "currentOptions": "當前選項",
+      "reset": "重置",
+      "clearAll": "清除全部"
+    },
+    "whitespaceConverter": {
+      "title": "空白換行轉換器",
+      "description": "將空格和換行轉換為不可見的零寬度字符",
+      "modeSpaces": "僅空格",
+      "modeNewlines": "僅換行",
+      "modeBoth": "兩者皆是",
+      "spacesExplanation": "將常規空格轉換為零寬度空格",
+      "spacesExample": "你好     世界 → 你好​‌​‌​世界",
+      "newlinesExplanation": "在換行處注入零寬度字符",
+      "newlinesExample": "第一行\\n\\n第二行 → 第一行\\n‌\\n‌第二行",
+      "bothExplanation": "轉換空格和換行",
+      "bothExample": "你好     世界\\n\\n第二行 → 你好​‌​‌​世界\\n‌\\n‌第二行",
+      "inputText": "輸入文字",
+      "inputPlaceholder": "輸入包含空格或換行的文字...",
+      "sampleText": "範例文字",
+      "convert": "轉換",
+      "clear": "清除",
+      "outputText": "輸出文字",
+      "copy": "複製",
+      "outputNote": "文字看起來相同，但包含社群媒體平台無法檢測的零寬度字符",
+      "useCaseTitle": "使用情境",
+      "useCase1": "在社群媒體平台上添加多個空格",
+      "useCase2": "建立平台通常會移除的格式",
+      "useCase3": "讓文字看起來獨特但仍可讀",
+      "useCase4": "繞過字符限制規則",
+      "privacyNote": "隱私注意事項",
+      "privacyNoteText": "所有轉換都在您的瀏覽器中本地完成。不會將數據發送到伺服器。"
+    },
+    "randomGrouping": {
+      "title": "隨機分組工具",
+      "description": "公平隨機地將人員分成小組",
+      "membersList": "成員清單",
+      "inputPlaceholder": "輸入姓名（每行一個）",
+      "sample": "範例",
+      "memberCount": "{{count}} 位成員",
+      "numberOfGroups": "分組數量",
+      "createGroups": "建立分組",
+      "clear": "清除",
+      "results": "分組結果",
+      "noGroupsYet": "建立分組以查看結果",
+      "groupsCreated": "已建立 {{count}} 個小組",
+      "group": "小組",
+      "members": "成員",
+      "copyAll": "複製所有分組",
+      "enterNames": "在上方輸入成員姓名以建立分組",
+      "usageTips": "使用技巧",
+      "tip1": "非常適合團隊建設活動和遊戲",
+      "tip2": "確保公平隨機分配",
+      "tip3": "支援任意數量的成員",
+      "tip4": "複製結果與團隊分享"
+    },
+    "pomodoroTimer": {
+      "title": "番茄鐘計時器",
+      "description": "使用番茄工作法提升專注力和生產力",
+      "work": "工作",
+      "shortBreak": "短休息",
+      "longBreak": "長休息",
+      "start": "開始",
+      "pause": "暫停",
+      "statistics": "統計資訊",
+      "todayProgress": "今日進度",
+      "completedSessions": "完成的工作時段",
+      "totalWorkTime": "總工作時間",
+      "today": "今天",
+      "pomodoroTechnique": "番茄工作法",
+      "tip1": "專注工作 25 分鐘，然後休息 5 分鐘",
+      "tip2": "每完成 4 個工作時段，休息 15 分鐘",
+      "tip3": "工作時間專注於單一任務",
+      "tip4": "利用休息時間充分休息和充電",
+      "workComplete": "工作時段完成！",
+      "breakComplete": "休息時間結束！",
+      "takeBreak": "該休息了",
+      "backToWork": "準備好開始工作了嗎？"
+    }
+  },
+  "navigation": {
+    "home": "首頁",
+    "tools": "工具",
+    "about": "關於"
+  },
+  "adBanner": {
+    "advertisement": "廣告"
+  }
+}

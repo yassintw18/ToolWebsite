@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(grep -v \"^\\\\.$\")",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3000)",
+      "Bash(git init *)"
+    ]
+  }
+}

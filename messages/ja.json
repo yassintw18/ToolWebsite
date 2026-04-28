@@ -1,0 +1,177 @@
+{
+  "common": {
+    "appName": "GlobalUtils",
+    "tagline": "プライバシー優先の多言語ツールボックス",
+    "search": "ツールを検索...",
+    "darkMode": "ダークモード",
+    "lightMode": "ライトモード",
+    "language": "言語"
+  },
+  "tools": {
+    "jsonFormatter": {
+      "title": "JSONフォーマッター",
+      "description": "JSONデータのフォーマット、検証、美化",
+      "input": "JSON入力",
+      "output": "フォーマットされたJSON",
+      "format": "フォーマット",
+      "minify": "最小化",
+      "copy": "クリップボードにコピー",
+      "clear": "クリア",
+      "invalid": "無効なJSON",
+      "success": "JSONをクリップボードにコピーしました！"
+    },
+    "unitConverter": {
+      "title": "単位コンバーター",
+      "description": "異なる計測単位間で変換",
+      "length": "長さ",
+      "weight": "重さ",
+      "temperature": "温度",
+      "area": "面積",
+      "volume": "体積",
+      "from": "から",
+      "to": "へ",
+      "result": "結果"
+    },
+    "randomNumber": {
+      "title": "乱数生成器",
+      "description": "様々な目的のために乱数を生成",
+      "min": "最小値",
+      "max": "最大値",
+      "count": "数量",
+      "generate": "生成",
+      "result": "生成された数字",
+      "copy": "すべてコピー"
+    },
+    "decisionWheel": {
+      "title": "決めるくじ",
+      "description": "回転するホイールで決定を簡単に楽しく",
+      "spin": "ホイールを回す！",
+      "spinning": "回転中...",
+      "result": "ホイールが選んだのは：",
+      "noOptions": "オプションを追加して開始してください！",
+      "optionsTitle": "オプション",
+      "optionsCount": "{{count}}個のオプション",
+      "addOptions": "オプションを追加",
+      "inputPlaceholder": "オプションを入力（1行に1つ）",
+      "add": "追加",
+      "currentOptions": "現在のオプション",
+      "reset": "リセット",
+      "clearAll": "すべてクリア"
+    },
+    "whitespaceConverter": {
+      "title": "空白・改行コンバーター",
+      "description": "スペースと改行を見えないゼロ幅文字に変換",
+      "modeSpaces": "スペースのみ",
+      "modeNewlines": "改行のみ",
+      "modeBoth": "両方",
+      "spacesExplanation": "通常のスペースをゼロ幅スペースに変換",
+      "spacesExample": "こんにちは     世界 → こんにちは​‌​‌​世界",
+      "newlinesExplanation": "改行位置にゼロ幅文字を挿入",
+      "newlinesExample": "1行目\\n\\n2行目 → 1行目\\n‌\\n‌2行目",
+      "bothExplanation": "スペースと改行の両方を変換",
+      "bothExample": "こんにちは     世界\\n\\n2行目 → こんにちは​‌​‌​世界\\n‌\\n‌2行目",
+      "inputText": "入力テキスト",
+      "inputPlaceholder": "スペースや改行を含むテキストを入力...",
+      "sampleText": "サンプルテキスト",
+      "convert": "変換",
+      "clear": "クリア",
+      "outputText": "出力テキスト",
+      "copy": "コピー",
+      "outputNote": "テキストは同じように見えますが、ソーシャルメディアプラットフォームが検出できないゼロ幅文字が含まれています",
+      "useCaseTitle": "使用例",
+      "useCase1": "ソーシャルメディアで複数のスペースを追加",
+      "useCase2": "プラットフォームが通常削除するフォーマットを作成",
+      "useCase3": "読みやすさを保ちながらユニークな見た目に",
+      "useCase4": "文字制限の制限を回避",
+      "privacyNote": "プライバシーについて",
+      "privacyNoteText": "すべての変換はブラウザ内でローカルに行われます。サーバーにデータは送信されません。"
+    },
+    "randomGrouping": {
+      "title": "ランダム分组ツール",
+      "description": "人々を公平にランダムにグループ分け",
+      "membersList": "メンバーリスト",
+      "inputPlaceholder": "名前を入力（1行に1つ）",
+      "sample": "サンプル",
+      "memberCount": "{{count}}名のメンバー",
+      "numberOfGroups": "グループ数",
+      "createGroups": "グループを作成",
+      "clear": "クリア",
+      "results": "分组結果",
+      "noGroupsYet": "グループを作成して結果を表示",
+      "groupsCreated": "{{count}}個のグループを作成しました",
+      "group": "グループ",
+      "members": "名",
+      "copyAll": "すべてのグループをコピー",
+      "enterNames": "メンバー名を入力してグループを作成してください",
+      "usageTips": "使用のヒント",
+      "tip1": "チームビルディング活動やゲームに最適",
+      "tip2": "公平なランダム分配を保証",
+      "tip3": "任意の数のメンバーに対応",
+      "tip4": "結果をコピーしてチームと共有"
+    },
+    "pomodoroTimer": {
+      "title": "ポモドーロタイマー",
+      "description": "ポモドーロテクニックで生産性を向上",
+      "work": "作業",
+      "shortBreak": "短い休憩",
+      "longBreak": "長い休憩",
+      "start": "開始",
+      "pause": "一時停止",
+      "statistics": "統計",
+      "todayProgress": "今日の進捗",
+      "completedSessions": "完了した作業セッション",
+      "totalWorkTime": "総作業時間",
+      "today": "今日",
+      "pomodoroTechnique": "ポモドーロテクニック",
+      "tip1": "25分間作業してから5分間休憩しましょう",
+      "tip2": "4回の作業セッション後に15分間の長い休憩を",
+      "tip3": "作業時間は1つのタスクに集中",
+      "tip4": "休憩時間を利用して休息と再充電を",
+      "workComplete": "作業セッション完了！",
+      "breakComplete": "休憩終了！",
+      "takeBreak": "休憩の時間です",
+      "backToWork": "仕事に戻る準備はできましたか？"
+    }
+  },
+  "faq": {
+    "title": "よくある質問",
+    "subtitle": "GlobalUtilsに関する一般的な質問への回答を見つける",
+    "q1": {
+      "question": "GlobalUtilsとは何ですか？",
+      "answer": "GlobalUtilsは、プライバシーを優先し、多言語対応のユーティリティツールボックスです。開発者と日常ユーザーのために無料のオンラインツールを提供しています。すべてのツールは外部サーバーにデータを送信することなく、ブラウザで直接動作します。"
+    },
+    "q2": {
+      "question": "これらのツールは本当に無料で使用できますか？",
+      "answer": "はい！当社のツールはすべて完全に無料で、制限なく使用できます。すべての人に有用なユーティリティへの無料アクセスを提供したいと考えています。"
+    },
+    "q3": {
+      "question": "アカウントを作成する必要がありますか？",
+      "answer": "いいえ、アカウントは不要です！登録なしですべてのツールを匿名で使用できます。個人情報は収集せず、サインアップも要求しません。"
+    },
+    "q4": {
+      "question": "私のデータは安全でプライベートですか？",
+      "answer": "はい、絶対に安全です！すべての処理はブラウザ内でローカルに行われます。データを保存、転送、またはアクセスすることはありません。これにより完全なプライバシーとセキュリティが確保されます。"
+    },
+    "q5": {
+      "question": "これらのツールをオフラインで使用できますか？",
+      "answer": "はい！ページが読み込まれると、ほとんどのツールはブラウザで完全に動作するためオフラインで動作します。最初のページ読み込みのみインターネット接続が必要です。"
+    },
+    "q6": {
+      "question": "モバイルデバイスをサポートしていますか？",
+      "answer": "はい！当社のウェブサイトは完全にレスポンシブで、モバイルデバイス、タブレット、デスクトップコンピュータに最適化されています。すべてのツールはすべてのプラットフォームでシームレスに動作します。"
+    },
+    "contact": {
+      "title": "まだ質問がありますか？",
+      "description": "お探しの回答が見つかりませんか？親切なチームにお問い合わせください。",
+      "button": "サポートに連絡"
+    }
+  },
+  "navigation": {
+    "home": "ホーム",
+    "tools": "ツール",
+    "about": "について"
+  },
+  "adBanner": {
+    "advertisement": "広告"
+  }
+}

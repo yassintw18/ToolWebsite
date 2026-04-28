@@ -1,0 +1,190 @@
+# GlobalUtils 部署配置
+# 支援多種部署平台的配置
+
+# ==========================================
+# Vercel 部署
+# ==========================================
+
+## Vercel 是最推薦的部署平台
+
+### 部署步驟：
+
+1. **準備 Git 倉庫**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: GlobalUtils multi-language toolbox"
+   git remote add origin https://github.com/YOUR_USERNAME/globalutils.git
+   git push -u origin main
+   ```
+
+2. **連接到 Vercel**
+   - 訪問 [vercel.com](https://vercel.com)
+   - 使用 GitHub 帳號登入
+   - 點擊 "New Project"
+   - 選擇您的 globalutils 倉庫
+
+3. **配置項目**
+   - **Framework Preset**: Next.js
+   - **Root Directory**: `./`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `.next`
+
+4. **環境變數** (可選)
+   ```
+   NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+   NEXT_PUBLIC_ADSENSE_ID=ca-pub-XXXXXXXXXXXXXXXX
+   ```
+
+5. **部署**
+   - 點擊 "Deploy"
+   - 等待 2-3 分鐘
+   - 獲得 `.vercel.app` 域名
+
+# ==========================================
+# Netlify 部署
+# ==========================================
+
+## Netlify 也是不錯的選擇
+
+### 構建配置：
+```toml
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+```
+
+# ==========================================
+# 自定義域名
+# ==========================================
+
+### 設置自定義域名：
+
+1. **購買域名**
+   - Namecheap
+   - GoDaddy
+   - Cloudflare Registrar
+
+2. **DNS 配置**
+   ```
+   A    @    76.76.21.21     # Vercel
+   CNAME www    cname.vercel-dns.com
+   ```
+
+3. **SSL 證書**
+   - Vercel 自動提供免費 SSL
+   - Let's Encrypt 證書
+
+# ==========================================
+# 環境變數說明
+# ==========================================
+
+### 必要環境變數：
+無 (專案可無環境變數運行)
+
+### 可選環境變數：
+
+```env
+# 網站 URL
+NEXT_PUBLIC_SITE_URL=https://globalutils.com
+
+# Google Analytics (分析)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Google AdSense (廣告)
+NEXT_PUBLIC_ADSENSE_ID=ca-pub-XXXXXXXXXXXXXXXX
+
+# 開發模式
+NODE_ENV=production
+```
+
+# ==========================================
+# 效能優化
+# ==========================================
+
+### Vercel 自動優化：
+- ✅ 自動 CDN 分發
+- ✅ 圖片優化
+- ✅ 代碼分割
+- ✅ 邊緣函數支援
+
+### 推薦的區域設置：
+-香港 (hkg1) - 亞洲用戶
+- 東京 (tyo1) - 日本用戶
+- 新加坡 (sin1) - 東南亞用戶
+- 紐約 (ewr1) - 美國用戶
+- 法蘭克福 (fra1) - 歐洲用戶
+
+# ==========================================
+# 監控和分析
+# ==========================================
+
+### 免費監控工具：
+1. **Vercel Analytics** - 已整合
+2. **Google Analytics 4** - 需配置
+3. **Google Search Console** - SEO 監控
+
+### 錯誤追蹤：
+1. **Sentry** - 錯誤監控
+2. **LogRocket** - 用戶會話記錄
+
+# ==========================================
+# 成本估算
+# ==========================================
+
+### Vercel 免費方案：
+- ✅ 無限部署
+- ✅ 100GB 帶寬/月
+- ✅ 自動 SSL
+- ✅ 邊緣網絡
+
+### 付費方案 (Hobby - $20/月)：
+- ✅ 無限帶寬
+- ✅ 自定義域名
+- ✅ 優先構建時間
+
+### 預估月成本：
+- 個人項目：$0 (免費方案)
+- 小型商業：$20/月 (Hobby)
+- 大型商業：$480/月 (Pro)
+
+# ==========================================
+# 備份和恢復
+# ==========================================
+
+### 自動備份：
+- Git 倉庫作為代碼備份
+- Vercel 自動部署歷史
+- 環境變數版本控制
+
+### 災難恢復：
+1. 代碼：從 Git 恢復
+2. 數據：無需恢復 (零存儲架構)
+3. 配置：從環境變數恢復
+
+# ==========================================
+# 安全檢查清單
+# ==========================================
+
+部署前確認：
+- [ ] 更新所有依賴套件
+- [ ] 設置安全 HTTP 標頭
+- [ ] 配置 CSP (Content Security Policy)
+- [ ] 啟用 HTTPS 重定向
+- [ ] 設置速率限制
+- [ ] 配置錯誤頁面
+- [ ] 測試所有語言路徑
+- [ ] 驗證 SEO 標籤
+- [ ] 檢查響應式設計
+- [ ] 測試表單和互動
+
+---
+
+**部署聯繫**: 如需部署協助，請查看 Vercel 文檔或創建 Issue
