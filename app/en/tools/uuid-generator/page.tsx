@@ -1,10 +1,13 @@
+"use client"
+
+import { UuidGenerator } from "@/components/uuid-generator-pro"
+
 export default function EnglishUuidGeneratorPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>UUID Generator</h1>
-      <p>Generate unique UUIDs for your applications.</p>
-      <p>Coming soon: UUID v4, bulk generation, and more!</p>
-      <a href="/en/tools">← Back to Tools</a>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-gray-900 dark:via-purple-900 dark:to-pink-900">
+      <div className="container mx-auto py-8">
+        <UuidGenerator />
+      </div>
     </div>
   )
 }

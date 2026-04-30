@@ -1,9 +1,13 @@
+"use client"
+
+import { JsonFormatter } from "@/components/json-formatter-pro"
+
 export default function ChineseJsonFormatterPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>JSON 格式化工具 - 中文版</h1>
-      <p>此工具目前正在開發中。</p>
-      <a href="/zh-TW/tools">← 返回工具列表</a>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900 dark:to-blue-900">
+      <div className="container mx-auto py-8">
+        <JsonFormatter />
+      </div>
     </div>
   )
 }
