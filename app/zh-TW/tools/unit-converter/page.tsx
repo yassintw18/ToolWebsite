@@ -1,10 +1,13 @@
+"use client"
+
+import { UnitConverter } from "@/components/unit-converter-pro"
+
 export default function ChineseUnitConverterPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>單位轉換器</h1>
-      <p>在不同測量單位之間進行轉換。</p>
-      <p>即將推出：長度、重量、溫度等更多單位！</p>
-      <a href="/zh-TW/tools">← 返回工具列表</a>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-red-900">
+      <div className="container mx-auto py-8">
+        <UnitConverter />
+      </div>
     </div>
   )
 }

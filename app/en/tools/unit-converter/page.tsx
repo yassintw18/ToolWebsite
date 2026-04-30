@@ -1,10 +1,13 @@
+"use client"
+
+import { UnitConverter } from "@/components/unit-converter-pro"
+
 export default function EnglishUnitConverterPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Unit Converter</h1>
-      <p>Convert between different units of measurement.</p>
-      <p>Coming soon: Length, Weight, Temperature, and more!</p>
-      <a href="/en/tools">← Back to Tools</a>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-red-900">
+      <div className="container mx-auto py-8">
+        <UnitConverter />
+      </div>
     </div>
   )
 }

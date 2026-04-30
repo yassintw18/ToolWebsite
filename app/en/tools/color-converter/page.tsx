@@ -1,10 +1,13 @@
+"use client"
+
+import { ColorConverter } from "@/components/color-converter-pro"
+
 export default function EnglishColorConverterPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Color Converter</h1>
-      <p>Convert colors between HEX, RGB, HSL formats.</p>
-      <p>Coming soon: Live preview, color picker, and more!</p>
-      <a href="/en/tools">← Back to Tools</a>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-pink-900 dark:to-orange-900">
+      <div className="container mx-auto py-8">
+        <ColorConverter />
+      </div>
     </div>
   )
 }
