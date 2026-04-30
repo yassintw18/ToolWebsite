@@ -38,6 +38,24 @@ export default function EnglishHomePage() {
       path: "/en/tools/random-number",
       color: "from-green-500 to-blue-600",
       badge: "Working"
+    },
+    {
+      id: "color-converter",
+      title: "Color Converter",
+      description: "Convert colors between HEX, RGB, HSL formats with live preview",
+      icon: Globe,
+      path: "/en/tools/color-converter",
+      color: "from-pink-500 to-orange-600",
+      badge: "Working"
+    },
+    {
+      id: "unit-converter",
+      title: "Unit Converter",
+      description: "Convert length, weight, and temperature measurements",
+      icon: Ruler,
+      path: "/en/tools/unit-converter",
+      color: "from-orange-500 to-red-600",
+      badge: "Working"
     }
   ]
 

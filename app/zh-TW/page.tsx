@@ -38,6 +38,24 @@ export default function ChineseHomePage() {
       path: "/zh-TW/tools/random-number",
       color: "from-green-500 to-blue-600",
       badge: "可用"
+    },
+    {
+      id: "color-converter",
+      title: "顏色轉換器",
+      description: "在 HEX、RGB、HSL 格式之間轉換顏色，實時預覽",
+      icon: Globe,
+      path: "/zh-TW/tools/color-converter",
+      color: "from-pink-500 to-orange-600",
+      badge: "可用"
+    },
+    {
+      id: "unit-converter",
+      title: "單位轉換器",
+      description: "轉換長度、重量和溫度測量單位",
+      icon: Ruler,
+      path: "/zh-TW/tools/unit-converter",
+      color: "from-orange-500 to-red-600",
+      badge: "可用"
     }
   ]
 
