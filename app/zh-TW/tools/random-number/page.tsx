@@ -1,10 +1,13 @@
+"use client"
+
+import { RandomNumberGenerator } from "@/components/random-number-generator-pro"
+
 export default function ChineseRandomNumberPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>隨機數生成器</h1>
-      <p>在自定義範圍內生成隨機數字。</p>
-      <p>即將推出：自定義範圍、多個數字生成等功能！</p>
-      <a href="/zh-TW/tools">← 返回工具列表</a>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-green-900 dark:to-blue-900">
+      <div className="container mx-auto py-8">
+        <RandomNumberGenerator />
+      </div>
     </div>
   )
 }

@@ -1,10 +1,13 @@
+"use client"
+
+import { RandomNumberGenerator } from "@/components/random-number-generator-pro"
+
 export default function EnglishRandomNumberPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Random Number Generator</h1>
-      <p>Generate random numbers within custom ranges.</p>
-      <p>Coming soon: Custom ranges, multiple numbers, and more!</p>
-      <a href="/en/tools">← Back to Tools</a>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-green-900 dark:to-blue-900">
+      <div className="container mx-auto py-8">
+        <RandomNumberGenerator />
+      </div>
     </div>
   )
 }
