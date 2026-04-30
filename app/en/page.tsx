@@ -33,11 +33,11 @@ export default function EnglishHomePage() {
     {
       id: "random-number",
       title: "Random Number Generator",
-      description: "Generate random numbers within custom ranges",
+      description: "Generate random numbers with statistics and batch generation",
       icon: Sparkles,
       path: "/en/tools/random-number",
       color: "from-green-500 to-blue-600",
-      badge: "Coming Soon"
+      badge: "Working"
     }
   ]
 

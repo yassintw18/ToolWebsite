@@ -33,11 +33,11 @@ export default function ChineseHomePage() {
     {
       id: "random-number",
       title: "隨機數生成器",
-      description: "在自定義範圍內生成隨機數字",
+      description: "生成隨機數字，支持統計數據和批量生成",
       icon: Sparkles,
       path: "/zh-TW/tools/random-number",
       color: "from-green-500 to-blue-600",
-      badge: "即將推出"
+      badge: "可用"
     }
   ]
 
