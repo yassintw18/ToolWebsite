@@ -5,7 +5,7 @@ import { AppSidebar } from "@/components/app-sidebar"
 import { AppHeader } from "@/components/app-header"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileJson, Hash, Sparkles, ArrowRight, Globe, Zap, Shield, TrendingUp } from "lucide-react"
+import { FileJson, Hash, Sparkles, ArrowRight, Globe, Zap, Shield, TrendingUp, Ruler } from "lucide-react"
 import { useRouter } from 'next/navigation'
 
 export default function ChineseHomePage() {
