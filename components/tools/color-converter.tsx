@@ -128,154 +128,169 @@ export function ColorConverter() {
   }
 
   return (
-    <div className="flex flex-col gap-4 p-4 lg:p-6">
-      <div className="flex items-center gap-2">
-        <Palette className="size-6 text-primary" />
-        <h2 className="text-xl font-semibold text-foreground">{t('title')}</h2>
+    <div className="flex flex-col gap-6 p-6 md:p-8 max-w-7xl mx-auto">
+      {/* Friendly Header */}
+      <div className="text-center space-y-3">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 border border-pink-200">
+          <Palette className="w-4 h-4 text-pink-600" />
+          <span className="text-sm font-medium text-pink-900">{t('title')}</span>
+        </div>
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900">
+          Color Converter
+        </h1>
+        <p className="text-slate-600 max-w-2xl mx-auto">
+          Convert colors between HEX, RGB, HSL, and CMYK formats instantly. Perfect for designers and developers.
+        </p>
       </div>
 
       {/* Color preview */}
-      <Card className="bg-gradient-to-br from-primary/20 to-secondary/20">
-        <CardContent className="pt-6">
-          <div className="flex items-center justify-between">
-            <div
-              className="w-32 h-32 rounded-xl shadow-2xl border-4 border-background"
-              style={{ backgroundColor: color.hex }}
-            />
-            <div className="text-right">
-              <p className="text-sm text-muted-foreground">{t('currentColor')}</p>
-              <p className="text-2xl font-bold font-mono">{color.hex}</p>
-              <Button
-                onClick={randomColor}
-                variant="outline"
-                size="sm"
-                className="mt-2"
-              >
-                <RefreshCw className="mr-2 size-4" />
-                {t('random')}
-              </Button>
+      <Card className="border-2 border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl overflow-hidden">
+        <CardContent className="p-8">
+          <div className="flex items-center justify-between flex-wrap gap-6">
+            <div className="flex items-center gap-6">
+              <div
+                className="w-32 h-32 rounded-2xl shadow-2xl border-4 border-white transition-all duration-300 hover:scale-110"
+                style={{ backgroundColor: color.hex }}
+              />
+              <div>
+                <p className="text-sm text-slate-600 mb-1">{t('currentColor')}</p>
+                <p className="text-3xl font-bold font-mono text-slate-900">{color.hex}</p>
+              </div>
             </div>
+            <Button
+              onClick={randomColor}
+              size="lg"
+              className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+            >
+              <RefreshCw className="mr-2 w-4 h-4" />
+              {t('random')}
+            </Button>
           </div>
         </CardContent>
       </Card>
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         {/* HEX input */}
-        <Card>
-          <CardHeader>
+        <Card className="border-2 border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl">
+          <CardHeader className="py-4 bg-gradient-to-r from-pink-50 to-rose-50 border-b border-pink-100">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-sm font-medium">HEX</CardTitle>
+              <CardTitle className="text-base font-semibold text-pink-900">HEX</CardTitle>
               <Button
                 onClick={() => copyToClipboard(color.hex, 'hex')}
                 variant="ghost"
-                size="icon-sm"
+                size="icon"
+                className="rounded-xl hover:bg-pink-100 hover:text-pink-700 transition-all duration-200"
               >
-                {copied === 'hex' ? <Check className="size-4 text-green-500" /> : <Copy className="size-4" />}
+                {copied === 'hex' ? <Check className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
               </Button>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-4">
             <Input
               type="text"
               value={color.hex}
               onChange={(e) => updateFromHex(e.target.value)}
               placeholder="#000000"
-              className="font-mono"
+              className="font-mono text-lg rounded-xl border-2 border-slate-200 focus:border-pink-400 h-12"
             />
           </CardContent>
         </Card>
 
         {/* RGB input */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-medium">RGB</CardTitle>
+        <Card className="border-2 border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl">
+          <CardHeader className="py-4 bg-gradient-to-r from-red-50 to-orange-50 border-b border-red-100">
+            <CardTitle className="text-base font-semibold text-red-900">RGB</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label>R</Label>
-                <span className="font-mono text-sm">{color.rgb.r}</span>
+          <CardContent className="space-y-4 p-4">
+            <div className="space-y-3">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label className="text-sm font-medium text-slate-700">Red</Label>
+                  <span className="font-mono text-sm font-semibold text-red-600">{color.rgb.r}</span>
+                </div>
+                <Slider
+                  value={[color.rgb.r]}
+                  onValueChange={(value) => updateFromRgb('r', value[0])}
+                  max={255}
+                  className="w-full"
+                />
               </div>
-              <Slider
-                value={[color.rgb.r]}
-                onValueChange={(value) => updateFromRgb('r', value[0])}
-                max={255}
-                className="w-full"
-              />
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label>G</Label>
-                <span className="font-mono text-sm">{color.rgb.g}</span>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label className="text-sm font-medium text-slate-700">Green</Label>
+                  <span className="font-mono text-sm font-semibold text-green-600">{color.rgb.g}</span>
+                </div>
+                <Slider
+                  value={[color.rgb.g]}
+                  onValueChange={(value) => updateFromRgb('g', value[0])}
+                  max={255}
+                  className="w-full"
+                />
               </div>
-              <Slider
-                value={[color.rgb.g]}
-                onValueChange={(value) => updateFromRgb('g', value[0])}
-                max={255}
-                className="w-full"
-              />
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label>B</Label>
-                <span className="font-mono text-sm">{color.rgb.b}</span>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label className="text-sm font-medium text-slate-700">Blue</Label>
+                  <span className="font-mono text-sm font-semibold text-blue-600">{color.rgb.b}</span>
+                </div>
+                <Slider
+                  value={[color.rgb.b]}
+                  onValueChange={(value) => updateFromRgb('b', value[0])}
+                  max={255}
+                  className="w-full"
+                />
               </div>
-              <Slider
-                value={[color.rgb.b]}
-                onValueChange={(value) => updateFromRgb('b', value[0])}
-                max={255}
-                className="w-full"
-              />
             </div>
             <div className="flex gap-2">
               <Input
                 value={`rgb(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b})`}
                 readOnly
-                className="font-mono text-sm"
+                className="font-mono text-sm rounded-xl border-2 border-slate-200 bg-slate-50"
               />
               <Button
                 onClick={() => copyToClipboard(`rgb(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b})`, 'rgb')}
                 variant="outline"
-                size="sm"
+                size="icon"
+                className="rounded-xl border-2 border-slate-200 hover:border-red-300 hover:bg-red-50 transition-all duration-200"
               >
-                {copied === 'rgb' ? <Check className="size-4" /> : <Copy className="size-4" />}
+                {copied === 'rgb' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </Button>
             </div>
           </CardContent>
         </Card>
 
         {/* HSL display */}
-        <Card>
-          <CardHeader>
+        <Card className="border-2 border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl">
+          <CardHeader className="py-4 bg-gradient-to-r from-violet-50 to-purple-50 border-b border-violet-100">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-sm font-medium">HSL</CardTitle>
+              <CardTitle className="text-base font-semibold text-violet-900">HSL</CardTitle>
               <Button
                 onClick={() => copyToClipboard(`hsl(${color.hsl.h}, ${color.hsl.s}%, ${color.hsl.l}%)`, 'hsl')}
                 variant="ghost"
-                size="icon-sm"
+                size="icon"
+                className="rounded-xl hover:bg-violet-100 hover:text-violet-700 transition-all duration-200"
               >
-                {copied === 'hsl' ? <Check className="size-4 text-green-500" /> : <Copy className="size-4" />}
+                {copied === 'hsl' ? <Check className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
               </Button>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-4">
             <div className="space-y-3">
-              <div className="bg-muted/50 p-3 rounded">
-                <p className="text-xs text-muted-foreground mb-1">HSL</p>
-                <p className="font-mono text-sm">hsl({color.hsl.h}, {color.hsl.s}%, {color.hsl.l}%)</p>
+              <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-4 border border-violet-200">
+                <p className="text-xs text-violet-700 font-medium mb-1">HSL Value</p>
+                <p className="font-mono text-sm text-violet-900">hsl({color.hsl.h}, {color.hsl.s}%, {color.hsl.l}%)</p>
               </div>
-              <div className="grid grid-cols-3 gap-2 text-sm">
-                <div className="bg-muted/50 p-2 rounded text-center">
-                  <p className="text-muted-foreground text-xs">H</p>
-                  <p className="font-semibold">{color.hsl.h}°</p>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-3 border border-violet-200 text-center">
+                  <p className="text-violet-700 text-xs font-medium mb-1">H</p>
+                  <p className="font-bold text-violet-900">{color.hsl.h}°</p>
                 </div>
-                <div className="bg-muted/50 p-2 rounded text-center">
-                  <p className="text-muted-foreground text-xs">S</p>
-                  <p className="font-semibold">{color.hsl.s}%</p>
+                <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-3 border border-violet-200 text-center">
+                  <p className="text-violet-700 text-xs font-medium mb-1">S</p>
+                  <p className="font-bold text-violet-900">{color.hsl.s}%</p>
                 </div>
-                <div className="bg-muted/50 p-2 rounded text-center">
-                  <p className="text-muted-foreground text-xs">L</p>
-                  <p className="font-semibold">{color.hsl.l}%</p>
+                <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-3 border border-violet-200 text-center">
+                  <p className="text-violet-700 text-xs font-medium mb-1">L</p>
+                  <p className="font-bold text-violet-900">{color.hsl.l}%</p>
                 </div>
               </div>
             </div>
@@ -283,41 +298,42 @@ export function ColorConverter() {
         </Card>
 
         {/* CMYK display */}
-        <Card>
-          <CardHeader>
+        <Card className="border-2 border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl">
+          <CardHeader className="py-4 bg-gradient-to-r from-amber-50 to-yellow-50 border-b border-amber-100">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-sm font-medium">CMYK</CardTitle>
+              <CardTitle className="text-base font-semibold text-amber-900">CMYK</CardTitle>
               <Button
-                onClick={() => copyToClipboard(`cmyk(${color.cmyk.c}, ${color.cmyk.m}, ${color.cmyk.y}, ${color.cmyk.k})`, 'cmyk')}
+                onClick={() => copyToClipboard(`cmyk(${color.cmyk.c}%, ${color.cmyk.m}%, ${color.cmyk.y}%, ${color.cmyk.k}%)`, 'cmyk')}
                 variant="ghost"
-                size="icon-sm"
+                size="icon"
+                className="rounded-xl hover:bg-amber-100 hover:text-amber-700 transition-all duration-200"
               >
-                {copied === 'cmyk' ? <Check className="size-4 text-green-500" /> : <Copy className="size-4" />}
+                {copied === 'cmyk' ? <Check className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
               </Button>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-4">
             <div className="space-y-3">
-              <div className="bg-muted/50 p-3 rounded">
-                <p className="text-xs text-muted-foreground mb-1">CMYK</p>
-                <p className="font-mono text-sm">cmyk({color.cmyk.c}%, {color.cmyk.m}%, {color.cmyk.y}%, {color.cmyk.k}%)</p>
+              <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-4 border border-amber-200">
+                <p className="text-xs text-amber-700 font-medium mb-1">CMYK Value</p>
+                <p className="font-mono text-sm text-amber-900">cmyk({color.cmyk.c}%, {color.cmyk.m}%, {color.cmyk.y}%, {color.cmyk.k}%)</p>
               </div>
-              <div className="grid grid-cols-4 gap-2 text-sm">
-                <div className="bg-muted/50 p-2 rounded text-center">
-                  <p className="text-muted-foreground text-xs">C</p>
-                  <p className="font-semibold">{color.cmyk.c}%</p>
+              <div className="grid grid-cols-4 gap-2">
+                <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-3 border border-amber-200 text-center">
+                  <p className="text-amber-700 text-xs font-medium mb-1">C</p>
+                  <p className="font-bold text-amber-900">{color.cmyk.c}%</p>
                 </div>
-                <div className="bg-muted/50 p-2 rounded text-center">
-                  <p className="text-muted-foreground text-xs">M</p>
-                  <p className="font-semibold">{color.cmyk.m}%</p>
+                <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-3 border border-amber-200 text-center">
+                  <p className="text-amber-700 text-xs font-medium mb-1">M</p>
+                  <p className="font-bold text-amber-900">{color.cmyk.m}%</p>
                 </div>
-                <div className="bg-muted/50 p-2 rounded text-center">
-                  <p className="text-muted-foreground text-xs">Y</p>
-                  <p className="font-semibold">{color.cmyk.y}%</p>
+                <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-3 border border-amber-200 text-center">
+                  <p className="text-amber-700 text-xs font-medium mb-1">Y</p>
+                  <p className="font-bold text-amber-900">{color.cmyk.y}%</p>
                 </div>
-                <div className="bg-muted/50 p-2 rounded text-center">
-                  <p className="text-muted-foreground text-xs">K</p>
-                  <p className="font-semibold">{color.cmyk.k}%</p>
+                <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-3 border border-amber-200 text-center">
+                  <p className="text-amber-700 text-xs font-medium mb-1">K</p>
+                  <p className="font-bold text-amber-900">{color.cmyk.k}%</p>
                 </div>
               </div>
             </div>
@@ -325,9 +341,19 @@ export function ColorConverter() {
         </Card>
       </div>
 
-      <div className="text-xs text-muted-foreground bg-muted/50 p-3 rounded">
-        <p className="font-semibold mb-1">⚡ {t('privacyNote')}</p>
-        <p>{t('privacyNoteText')}</p>
+      {/* Info Box */}
+      <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl border border-pink-200 p-6">
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-xl bg-pink-500 flex items-center justify-center flex-shrink-0">
+            <Palette className="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-pink-900 mb-1">Color Converter</h3>
+            <p className="text-sm text-pink-800 leading-relaxed">
+              Convert colors between different formats instantly. Perfect for web designers, graphic artists, and developers working with CSS. All conversions happen locally in your browser for complete privacy. Supports HEX, RGB, HSL, and CMYK formats.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )

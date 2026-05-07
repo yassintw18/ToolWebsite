@@ -7,7 +7,7 @@
 "use client"
 
 import * as React from "react"
-import { Copy, Check, RefreshCw, Download, Key } from "lucide-react"
+import { Copy, Check, RefreshCw, Download, Key, Sparkles, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
@@ -112,23 +112,35 @@ export function UuidGenerator() {
   }
 
   return (
-    <div className="flex flex-col gap-4 p-4 lg:p-6">
-      <div className="flex items-center gap-2">
-        <Key className="size-6 text-primary" />
-        <h2 className="text-xl font-semibold text-foreground">{t('title')}</h2>
+    <div className="flex flex-col gap-6 p-6 md:p-8 max-w-7xl mx-auto">
+      {/* Friendly Header */}
+      <div className="text-center space-y-3">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200">
+          <Key className="w-4 h-4 text-violet-600" />
+          <span className="text-sm font-medium text-violet-900">{t('title')}</span>
+        </div>
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900">
+          UUID Generator
+        </h1>
+        <p className="text-slate-600 max-w-2xl mx-auto">
+          Generate unique identifiers instantly. Perfect for databases, API keys, and more.
+        </p>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-3">
         {/* Settings Panel */}
-        <Card className="lg:col-span-1">
-          <CardHeader>
-            <CardTitle className="text-sm font-medium">{t('settings')}</CardTitle>
+        <Card className="lg:col-span-1 border-2 border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl">
+          <CardHeader className="py-4 bg-gradient-to-r from-violet-50 to-purple-50 border-b border-violet-100">
+            <CardTitle className="text-base font-semibold text-violet-900 flex items-center gap-2">
+              <Sparkles className="w-5 h-5" />
+              {t('settings')}
+            </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-5 p-4">
             <div className="space-y-2">
-              <Label htmlFor="version">{t('version')}</Label>
+              <Label htmlFor="version" className="text-sm font-medium text-slate-700">{t('version')}</Label>
               <Select value={version} onValueChange={(value) => setVersion(value as UUIDVersion)}>
-                <SelectTrigger id="version">
+                <SelectTrigger id="version" className="rounded-xl border-2 border-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -138,9 +150,9 @@ export function UuidGenerator() {
               </Select>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div>
-                <Label htmlFor="count">{t('count')}: {count[0]}</Label>
+                <Label htmlFor="count" className="text-sm font-medium text-slate-700">{t('count')}: <span className="text-violet-600 font-semibold">{count[0]}</span></Label>
                 <Slider
                   id="count"
                   min={1}
@@ -153,13 +165,17 @@ export function UuidGenerator() {
               </div>
 
               <div className="space-y-2">
-                <Label>{t('format')}</Label>
+                <Label className="text-sm font-medium text-slate-700">{t('format')}</Label>
                 <div className="flex gap-2">
                   <Button
                     variant={format === 'uppercase' ? 'default' : 'outline'}
                     size="sm"
                     onClick={() => setFormat('uppercase')}
-                    className="flex-1"
+                    className={`flex-1 rounded-xl transition-all duration-200 ${
+                      format === 'uppercase'
+                        ? 'bg-violet-500 text-white shadow-md'
+                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    }`}
                   >
                     ABCDEF
                   </Button>
@@ -167,7 +183,11 @@ export function UuidGenerator() {
                     variant={format === 'lowercase' ? 'default' : 'outline'}
                     size="sm"
                     onClick={() => setFormat('lowercase')}
-                    className="flex-1"
+                    className={`flex-1 rounded-xl transition-all duration-200 ${
+                      format === 'lowercase'
+                        ? 'bg-violet-500 text-white shadow-md'
+                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    }`}
                   >
                     abcdef
                   </Button>
@@ -175,54 +195,69 @@ export function UuidGenerator() {
               </div>
 
               <div className="flex items-center justify-between">
-                <Label htmlFor="hyphens">{t('hyphens')}</Label>
+                <Label htmlFor="hyphens" className="text-sm font-medium text-slate-700">{t('hyphens')}</Label>
                 <Button
                   variant={withHyphens ? 'default' : 'outline'}
                   size="sm"
                   onClick={() => setWithHyphens(!withHyphens)}
                   id="hyphens"
+                  className={`rounded-xl transition-all duration-200 ${
+                    withHyphens
+                      ? 'bg-violet-500 text-white shadow-md'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
                 >
                   {withHyphens ? 'XXX-XXX' : 'XXXXXX'}
                 </Button>
               </div>
             </div>
 
-            <div className="text-xs text-muted-foreground bg-muted/50 p-3 rounded">
-              <p className="font-semibold mb-1">⚡ {t('privacyNote')}</p>
-              <p>{t('privacyNoteText')}</p>
+            <div className="bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-xl p-3">
+              <div className="flex items-start gap-2">
+                <Shield className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs font-semibold text-violet-900 mb-1">{t('privacyNote')}</p>
+                  <p className="text-xs text-violet-800 leading-relaxed">{t('privacyNoteText')}</p>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
 
         {/* Generation and Results */}
         <div className="lg:col-span-2 space-y-4">
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium">{t('generate')}</CardTitle>
+          <Card className="border-2 border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl overflow-hidden">
+            <CardHeader className="py-4 bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-100">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <CardTitle className="text-base font-semibold text-amber-900 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5" />
+                  {t('generate')}
+                </CardTitle>
                 <div className="flex gap-2">
                   <Button
                     onClick={generateUUID}
                     disabled={count[0] > 100}
-                    size="sm"
+                    size="default"
+                    className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                   >
-                    <RefreshCw className="mr-2 size-4" />
+                    <RefreshCw className="mr-2 w-4 h-4" />
                     {t('generate')}
                   </Button>
                   <Button
                     onClick={copyToClipboard}
                     variant="outline"
-                    size="sm"
+                    size="default"
                     disabled={uuids.length === 0}
+                    className="rounded-xl border-2 border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all duration-200"
                   >
                     {copied ? (
                       <>
-                        <Check className="mr-2 size-4" />
+                        <Check className="mr-2 w-4 h-4 text-green-600" />
                         {t('copied')}
                       </>
                     ) : (
                       <>
-                        <Copy className="mr-2 size-4" />
+                        <Copy className="mr-2 w-4 h-4" />
                         {t('copyAll')}
                       </>
                     )}
@@ -230,49 +265,55 @@ export function UuidGenerator() {
                   <Button
                     onClick={downloadUUIDs}
                     variant="outline"
-                    size="sm"
+                    size="icon"
                     disabled={uuids.length === 0}
+                    className="rounded-xl border-2 border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all duration-200"
                   >
-                    <Download className="size-4" />
+                    <Download className="w-4 h-4" />
                   </Button>
                   <Button
                     onClick={clearAll}
                     variant="ghost"
-                    size="sm"
+                    size="icon"
                     disabled={uuids.length === 0}
+                    className="rounded-xl hover:bg-red-50 hover:text-red-600 transition-all duration-200"
                   >
                     {t('clear')}
                   </Button>
                 </div>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-4">
               {uuids.length === 0 ? (
-                <div className="flex items-center justify-center h-64 text-muted-foreground">
+                <div className="flex items-center justify-center h-80 text-slate-400">
                   <div className="text-center">
-                    <Key className="mx-auto mb-2 size-12 opacity-50" />
-                    <p className="text-sm">{t('placeholder')}</p>
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-violet-100 to-purple-100 flex items-center justify-center">
+                      <Key className="w-8 h-8 text-violet-400" />
+                    </div>
+                    <p className="text-sm font-medium text-slate-600">{t('placeholder')}</p>
+                    <p className="text-xs text-slate-500 mt-1">Click the generate button to create UUIDs</p>
                   </div>
                 </div>
               ) : (
-                <div className="space-y-2 max-h-96 overflow-y-auto">
+                <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
                   {uuids.map((uuid, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                      className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-violet-50 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition-all duration-200 group"
                     >
-                      <code className="text-sm font-mono flex-1 truncate mr-2">
+                      <code className="text-sm font-mono flex-1 truncate mr-3 text-slate-700">
                         {uuid}
                       </code>
                       <Button
                         onClick={() => copySingleUUID(uuid)}
                         variant="ghost"
-                        size="icon-sm"
+                        size="icon"
+                        className="rounded-xl opacity-0 group-hover:opacity-100 hover:bg-violet-100 hover:text-violet-700 transition-all duration-200"
                       >
                         {copied ? (
-                          <Check className="size-3 text-green-500" />
+                          <Check className="w-4 h-4 text-green-600" />
                         ) : (
-                          <Copy className="size-3" />
+                          <Copy className="w-4 h-4" />
                         )}
                       </Button>
                     </div>
@@ -286,32 +327,50 @@ export function UuidGenerator() {
 
       {/* Statistics */}
       {uuids.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-medium">{t('statistics')}</CardTitle>
+        <Card className="border-2 border-slate-200 shadow-sm rounded-2xl overflow-hidden">
+          <CardHeader className="py-4 bg-gradient-to-r from-blue-50 to-cyan-50 border-b border-blue-100">
+            <CardTitle className="text-base font-semibold text-blue-900 flex items-center gap-2">
+              <Sparkles className="w-5 h-5" />
+              {t('statistics')}
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-4">
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-              <div>
-                <p className="text-xs text-muted-foreground">{t('totalGenerated')}</p>
-                <p className="text-lg font-semibold">{uuids.length}</p>
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
+                <p className="text-xs text-blue-700 font-medium mb-1">{t('totalGenerated')}</p>
+                <p className="text-2xl font-bold text-blue-900">{uuids.length}</p>
               </div>
-              <div>
-                <p className="text-xs text-muted-foreground">{t('version')}</p>
-                <p className="text-lg font-semibold">{version.toUpperCase()}</p>
+              <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-4 border border-violet-100">
+                <p className="text-xs text-violet-700 font-medium mb-1">{t('version')}</p>
+                <p className="text-2xl font-bold text-violet-900">{version.toUpperCase()}</p>
               </div>
-              <div>
-                <p className="text-xs text-muted-foreground">{t('format')}</p>
-                <p className="text-lg font-semibold">{format === 'uppercase' ? 'UPPER' : 'lower'}</p>
+              <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-100">
+                <p className="text-xs text-amber-700 font-medium mb-1">{t('format')}</p>
+                <p className="text-2xl font-bold text-amber-900">{format === 'uppercase' ? 'UPPER' : 'lower'}</p>
               </div>
-              <div>
-                <p className="text-xs text-muted-foreground">{t('length')}</p>
-                <p className="text-lg font-semibold">{withHyphens ? '36' : '32'} chars</p>
+              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
+                <p className="text-xs text-emerald-700 font-medium mb-1">{t('length')}</p>
+                <p className="text-2xl font-bold text-emerald-900">{withHyphens ? '36' : '32'} chars</p>
               </div>
             </div>
           </CardContent>
         </Card>
       )}
+
+      {/* Info Box */}
+      <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl border border-violet-200 p-6">
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-xl bg-violet-500 flex items-center justify-center flex-shrink-0">
+            <Key className="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-violet-900 mb-1">What are UUIDs?</h3>
+            <p className="text-sm text-violet-800 leading-relaxed">
+              UUIDs (Universally Unique Identifiers) are 128-bit numbers used to identify information in computer systems. Version 4 UUIDs are randomly generated and are perfect for creating unique IDs without coordination. Generate up to 100 UUIDs at once with complete privacy - all generation happens locally in your browser.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
